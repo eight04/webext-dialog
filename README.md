@@ -146,6 +146,10 @@ They work like builtin prompts.
 Changelog
 ---------
 
+* 0.1.1 (Mar 11, 2021)
+
+  - Fix: packaging issue.
+
 * 0.1.0 (Mar 11, 2021)
 
   - First release.
