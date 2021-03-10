@@ -1,10 +1,25 @@
-.webext-dialog-container {
+html, body, .webext-dialog-container {
+  margin: 0;
+  padding: 0;
   height: 100%;
+}
+.webext-dialog-container {
   display: grid;
   grid: 1fr 0fr / 1fr;
   grid-gap: 1em;
   padding: 1em;
+  box-sizing: border-box;
 }
+
+.webext-dialog-message {
+  align-self: center;
+  justify-self: center;
+  white-space: pre-wrap;
+}
+.webext-dialog-prompt .webext-dialog-message {
+  justify-self: start;
+}
+
 .webext-dialog-value {
   min-height: 0;
   display: none;

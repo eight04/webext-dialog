@@ -1,9 +1,25 @@
+function defaultMessage(_) {
+  return key => {
+    const r = _(key);
+    if (r) return r;
+    switch (key) {
+      case "ok":
+        return "OK";
+      case "cancel":
+        return "Cancel";
+    }
+    return key;
+  };
+}
+
 export function createDialogService({
   path,
-  getMessage,
+  getMessage = () => {},
   width: defaultWidth = 520,
   height: defaultHeight = 320
 }) {
+  getMessage = defaultMessage(getMessage);
+  
   async function open({
     width = defaultWidth,
     height = defaultHeight,
@@ -29,7 +45,8 @@ export function createDialogService({
       w = await browser.windows.create({
         width,
         height,
-        url: browser.runtime.getURL(path) + `?id=` + encodeURIComponent(id)
+        url: browser.runtime.getURL(path) + `?id=` + encodeURIComponent(id),
+        type: "popup"
       });
       return await Promise.race([
         promise,
@@ -99,7 +116,8 @@ function waitTab(id) {
 }
 
 function defer() {
-  const o = new Promise((resolve, reject) => {
+  const o = {};
+  o.promise = new Promise((resolve, reject) => {
     o.resolve = resolve;
     o.reject = reject;
   });
