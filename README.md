@@ -3,6 +3,9 @@ webext-dialog
 
 ![Github Build](https://github.com/eight04/webext-dialog/workflows/.github/workflows/test.yml/badge.svg)
 
+![Windows 10, Firefox 87](https://i.imgur.com/RUI5Yhg.png)
+![Windows 10, Chrome 89](https://i.imgur.com/9aFY1lI.png)
+
 A dialog service built with popups.
 
 Installation
@@ -20,7 +23,7 @@ This library doesn't use extra permissions. Only `browser.tabs` and `browser.win
 Usage examples
 --------------
 
-The dialog UI is built inside a popup. You have to create a HTML file and load the setup script. For example, create `my-dialog.html`:
+The dialog UI is built inside a popup. You have to create an HTML file and load the setup script. For example, create `my-dialog.html`:
 
 ```html
 <html>
@@ -42,6 +45,36 @@ await dialog.alert("Alert");
 console.log(await dialog.confirm("Are you sure?"));
 
 console.log(await dialog.prompt("Write some text", "default value"));
+```
+
+There are also pre-built bundles that can be included as scripts directly. Example:
+
+*my-dialog.html*
+```html
+<html>
+<script src="path/to/webext-dialog/dist/browser/webext-dialog-popup.js"></script>
+<html>
+```
+
+*manifest.json*
+```json
+{
+  background: {
+    scripts: [
+      "path/to/webext-dialog/dist/browser/webext-dialog.js",
+      "background.js"
+    ]
+  }
+}
+```
+
+*background.js*
+```js
+const dialog = webextDialog.createDialogService({ // access the module with global variable
+  path: "my-dialog.html"
+});
+
+await dialog.alert("Alert");
 ```
 
 API Reference

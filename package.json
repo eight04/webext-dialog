@@ -2,14 +2,26 @@
   "name": "webext-dialog",
   "version": "0.0.0",
   "description": "Prompt popup library built for webextensions",
-  "author": "eight04 <eight04@gmail.com>",
+  "author": "eight04 <eight04@gmail.com> (https://github.com/eight04)",
   "license": "MIT",
+  "keywords": [
+    "webextensions",
+    "popup"
+  ],
+  "bugs": "https://github.com/eight04/webext-dialog/issues",
   "scripts": {
     "test": "eslint \"**/*.mjs\" --cache",
     "build": "shx rm -rf dist/* && rollup -c",
     "preversion": "npm test",
     "version": "npm run build && git add .",
     "postversion": "git push --follow-tags && npm publish"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "dist/module/webext-dialog.js",
+    "./popup": "dist/module/webext-dialog-popup.js"
   },
   "eslintIgnore": [
     "dist"
