@@ -6,7 +6,11 @@ import buble from "@rollup/plugin-buble";
 
 export default [
   base({
-    external: ["jsx-dom"]
+    external: ["jsx-dom"],
+    output: {
+      dir: "dist/module",
+      entryFileNames: "[name].mjs"
+    }
   }),
   base({
     output: {
@@ -29,7 +33,6 @@ function base({output, plugins = [], ...args}) {
     },
     output: {
       format: "es",
-      dir: "dist/module",
       sourcemap: true,
       ...output
     },

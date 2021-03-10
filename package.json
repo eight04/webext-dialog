@@ -20,8 +20,8 @@
     "dist"
   ],
   "exports": {
-    ".": "dist/module/webext-dialog.js",
-    "./popup": "dist/module/webext-dialog-popup.js"
+    ".": "./dist/module/webext-dialog.mjs",
+    "./popup": "./dist/module/webext-dialog-popup.mjs"
   },
   "eslintIgnore": [
     "dist"
