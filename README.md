@@ -146,6 +146,6 @@ They work like builtin prompts.
 Changelog
 ---------
 
-* 0.1.0 (Next)
+* 0.1.0 (Mar 11, 2021)
 
-    - First release.
+  - First release.
