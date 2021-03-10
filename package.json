@@ -1,6 +1,6 @@
 {
   "name": "webext-dialog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Prompt popup library built for webextensions",
   "author": "eight04 <eight04@gmail.com> (https://github.com/eight04)",
   "license": "MIT",
