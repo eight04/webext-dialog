@@ -1,0 +1,32 @@
+{
+  "name": "webext-dialog",
+  "version": "0.0.0",
+  "description": "Prompt popup library built for webextensions",
+  "author": "eight04 <eight04@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "eslint \"**/*.mjs\" --cache",
+    "build": "shx rm -rf dist/* && rollup -c",
+    "preversion": "npm test",
+    "version": "npm run build && git add .",
+    "postversion": "git push --follow-tags && npm publish"
+  },
+  "eslintIgnore": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@rollup/plugin-buble": "^0.21.3",
+    "eslint": "^7.20.0",
+    "eslint-plugin-react": "^7.22.0",
+    "rollup": "^2.39.1",
+    "rollup-plugin-iife": "^0.5.0",
+    "rollup-plugin-inline-js": "^0.5.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "shx": "^0.3.3"
+  },
+  "repository": "eight04/webext-dialog",
+  "dependencies": {
+    "jsx-dom": "^7.0.0-beta.1"
+  }
+}

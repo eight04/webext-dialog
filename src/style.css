@@ -1,0 +1,29 @@
+.webext-dialog-container {
+  height: 100%;
+  display: grid;
+  grid: 1fr 0fr / 1fr;
+  grid-gap: 1em;
+  padding: 1em;
+}
+.webext-dialog-value {
+  min-height: 0;
+  display: none;
+}
+
+.webext-dialog-prompt {
+  grid: 0fr 1fr 0fr / 1fr;
+}
+.webext-dialog-prompt .webext-dialog-value {
+  display: block;
+}
+
+.webext-dialog-button-bar {
+  text-align: right;
+}
+.webext-dialog-button-bar button {
+  padding: 0.3em 0.6em;
+  min-width: 5em;
+}
+.webext-dialog-button-bar button:not(:first-child) {
+  margin-left: 0.3em;
+}
